@@ -1,9 +1,10 @@
-function App() {
+import {Routes} from './routes/Routes'
+import {Navigation} from './components/navigation/Navigation'
+
+export const App = () => {
   return (
-    <div>
-      <h1>HELLO WORLD</h1>
-    </div>
+    <Routes>
+      <Navigation />
+    </Routes>
   );
 }
-
-export default App;
