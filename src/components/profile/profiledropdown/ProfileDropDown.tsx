@@ -1,18 +1,29 @@
 import './ProfileDropDown.css'
 import { useHistory } from 'react-router-dom'
 import RoutingPath from '../../../routes/RoutingPath'
+import { useContext } from 'react'
+import { UserContext } from '../../../shared/providers/UserProvider'
 
 export const ProfileDropDown = () => {
+	const [, setAuthenticatedUser] = useContext(UserContext)
 	const history = useHistory()
+
+	const logout = () => {
+		/* localStorage.removeItem('TBA') */
+		setAuthenticatedUser(false)
+		history.push(RoutingPath.homeView)
+	}
 
 	return (
 		<div className="profileDropdown">
-			<span>Arasto Sahbaei</span> <br />
-			<span>arasto.sahbaei@gmail.com</span>
+			<span>Firstname Lastname</span> <br />
+			<span>qwerty@gmail.com</span>
 			<hr />
 			<div className='dropDownProfileRowWrapper'>
 				<span onClick={() => history.push(RoutingPath.createRecipeView)}>Profile</span> <br />
 				<span onClick={() => history.push(RoutingPath.createRecipeView)}>Create Recipe</span>
+				<hr />
+				<span onClick={() => logout()}>Sign out</span>
 			</div>
 		</div>
 	)

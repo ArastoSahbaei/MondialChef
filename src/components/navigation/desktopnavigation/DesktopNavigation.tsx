@@ -4,6 +4,7 @@ import { Profile } from '../../profile/Profile'
 import './DesktopNavigation.css'
 import { useContext } from 'react'
 import { UserContext } from '../../../shared/providers/UserProvider'
+import Logotype from '../../../shared/images/logotype.svg'
 
 export const DesktopNavigation = () => {
 	const history = useHistory()
@@ -17,6 +18,12 @@ export const DesktopNavigation = () => {
 
 	return (
 		<div className='desktopNavigationWrapper'>
+
+			<img className='navigationLogotype'
+				onClick={() => history.push(RoutingPath.homeView)}
+				src={Logotype}
+				alt='' />
+
 			<span onClick={() => history.push(RoutingPath.homeView)}>Home</span>
 			<span onClick={() => history.push(RoutingPath.recipeView)}>Recipes</span>
 			{displayUsernameOrSigninButton()}
