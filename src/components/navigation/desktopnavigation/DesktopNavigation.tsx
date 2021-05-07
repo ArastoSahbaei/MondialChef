@@ -1,6 +1,6 @@
 import RoutingPath from '../../../routes/RoutingPath';
 import {useHistory} from 'react-router-dom';
-import {Profile} from '../profile/Profile'
+import {Profile} from '../profilenavigation/ProfileNavigation'
 
 export const DesktopNavigation = () => {
 	const history = useHistory();
