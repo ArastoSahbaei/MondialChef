@@ -11,7 +11,7 @@ export const ProfileDropDown = () => {
 			<span>arasto.sahbaei@gmail.com</span>
 			<hr />
 			<div className='dropDownProfileRowWrapper'>
-				<span onClick={() => history.push(RoutingPath.createRecipeView)}>Profile</span>
+				<span onClick={() => history.push(RoutingPath.createRecipeView)}>Profile</span> <br />
 				<span onClick={() => history.push(RoutingPath.createRecipeView)}>Create Recipe</span>
 			</div>
 		</div>
