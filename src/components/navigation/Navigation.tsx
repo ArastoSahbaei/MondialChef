@@ -1,6 +1,6 @@
 import { useWindowDimensions } from '../../hooks/useWindowDimensions'
 import { DesktopNavigation } from './desktopnavigation/DesktopNavigation'
-import { MobileNavigation } from './desktopnavigation/mobilenavigation/MobileNavigation'
+import { MobileNavigation } from './mobilenavigation/MobileNavigation'
 
 export const Navigation = () => {
 	const { width } = useWindowDimensions()
