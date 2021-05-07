@@ -2,11 +2,13 @@
 const homeView = '/'
 const recipeView = '/recipes'
 const signInView = '/signin'
+const registerView = '/register'
 const createRecipeView = '/createrecipe'
 
 export default {
 	homeView,
 	recipeView,
 	signInView,
-	createRecipeView
+	createRecipeView,
+	registerView
 }

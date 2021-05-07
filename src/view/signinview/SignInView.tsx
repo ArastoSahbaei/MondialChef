@@ -25,6 +25,7 @@ export const SignInView = () => {
 			<form>
 				<input placeholder="username" onChange={(event) => setUsername(event.target.value)} /> <br />
 				<button onClick={(event) => signIn(event)}>Sign in</button>
+				<button onClick={() => history.push(RoutingPath.registerView)}>Register</button>
 			</form>
 		</div>
 	)
