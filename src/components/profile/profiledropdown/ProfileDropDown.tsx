@@ -9,7 +9,8 @@ export const ProfileDropDown = () => {
 	const history = useHistory()
 
 	const logout = () => {
-		/* localStorage.removeItem('TBA') */
+		localStorage.removeItem('username')
+		localStorage.removeItem('password')
 		setAuthenticatedUser(false)
 		history.push(RoutingPath.homeView)
 	}
