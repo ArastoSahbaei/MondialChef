@@ -5,5 +5,5 @@ npm install
 
 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### For backend setup. See Below.
+See [Configuration Reference](https://github.com/ArastoSahbaei/super-duper-doodle-backend).
