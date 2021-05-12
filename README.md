@@ -1,9 +1,9 @@
 ## Frontend Setup
 ```
 npm install
+npm start
 ```
 
 
-
 ### For backend setup. See Below.
-See [Configuration Reference](https://github.com/ArastoSahbaei/super-duper-doodle-backend).
+See [The backend project](https://github.com/ArastoSahbaei/super-duper-doodle-backend).
