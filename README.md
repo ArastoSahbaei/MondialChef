@@ -1,3 +1,8 @@
+  <h1 align="center"> :computer: Project Technical Stack </h1>
+
+![alt text](https://www.visions.net.in/sites/default/files/images/mern2/business.png)
+
+ <hr>
  <h1 align="center"> :computer: Project Setup(Frontend) </h1>
 
 # 1. Clone the project
