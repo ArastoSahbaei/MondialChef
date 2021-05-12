@@ -1,4 +1,4 @@
-  <h1 align="center"> :computer: Project Technical Stack </h1>
+  <h1 align="center"> :fax: Project Technical Stack </h1>
 <p align="center">
 	<img src="https://www.visions.net.in/sites/default/files/images/mern2/business.png">
 </p>
