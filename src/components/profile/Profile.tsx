@@ -11,7 +11,7 @@ export const Profile = (): JSX.Element => {
 			<img className='profileImg'
 				src={'https://thispersondoesnotexist.com/image'}
 				alt={''} />
-			<span>{authenticatedUser}</span>
+			<span>{authenticatedUser.username}</span>
 			<ProfileDropDown />
 		</div>
 	)
