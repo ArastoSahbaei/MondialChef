@@ -1,9 +1,24 @@
 .profileWrapper {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
 	cursor: pointer;
 }
 
 .profileImg {
-	width: 35px;
-	height: 35px;
+	width: 42px;
+	height: 42px;
 	border-radius: 50%;
+	align-self: center;
+	justify-self: center;
+	grid-row: 1/1;
+	grid-column: 1/1;
+}
+
+.displayName {
+	font-size: 1.2rem;
+	grid-row: 1/1;
+	grid-column: 5/5;
+	text-align: center;
+	align-self: center;
+	justify-self: center;
 }
