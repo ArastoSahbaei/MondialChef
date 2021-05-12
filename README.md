@@ -1,7 +1,7 @@
   <h1 align="center"> :computer: Project Technical Stack </h1>
-
-<img align="center" src="https://www.visions.net.in/sites/default/files/images/mern2/business.png">
-
+<p align="center">
+	<img src="https://www.visions.net.in/sites/default/files/images/mern2/business.png">
+</p>
  <hr>
  <h1 align="center"> :computer: Project Setup(Frontend) </h1>
 
