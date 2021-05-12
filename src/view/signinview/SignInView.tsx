@@ -62,6 +62,7 @@ export const SignInView = () => {
 				<input placeholder="username" onChange={(event) => setLoginCredentials({ ...loginCredentials, username: event.target.value })} /> <br />
 				<input placeholder="password" onChange={(event) => setLoginCredentials({ ...loginCredentials, password: event.target.value })} />
 				<button onClick={(event) => signIn(event)}>Sign in</button>
+				<button onClick={() => history.push(RoutingPath.registerView)}>Register</button>
 			</form>
 
 			<hr />
