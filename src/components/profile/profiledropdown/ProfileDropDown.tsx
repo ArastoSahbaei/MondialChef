@@ -9,7 +9,7 @@ export const ProfileDropDown = () => {
 	const history = useHistory()
 
 	const logout = () => {
-		/* localStorage.removeItem('TBA') */
+		localStorage.removeItem('token')
 		setAuthenticatedUser(false)
 		history.push(RoutingPath.homeView)
 	}
@@ -21,7 +21,8 @@ export const ProfileDropDown = () => {
 			<hr />
 			<div className='dropDownProfileRowWrapper'>
 				<span onClick={() => history.push(RoutingPath.createRecipeView)}>Profile</span> <br />
-				<span onClick={() => history.push(RoutingPath.createRecipeView)}>Create Recipe</span>
+				<span onClick={() => history.push(RoutingPath.createRecipeView)}>my Recipes</span> <br />
+				<span onClick={() => history.push(RoutingPath.createRecipeView)}>Create new Recipe</span>
 				<hr />
 				<span onClick={() => logout()}>Sign out</span>
 			</div>
