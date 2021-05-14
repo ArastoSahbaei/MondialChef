@@ -40,6 +40,11 @@ const resetPassword = (newPasswordAndToken: any) => {
 	return http.put('/resetpassword', newPasswordAndToken)
 }
 
+const getAllRecipes = () => {
+	return http.get('/recipe')
+}
+
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
 	authenticatedRouteExample,
 	registerNewUser,
@@ -51,4 +56,5 @@ export default {
 	deleteUserWithID,
 	forgotPassword,
 	resetPassword,
+	getAllRecipes
 }
