@@ -1,11 +1,12 @@
 import './SearchRecipe.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useDebounce } from '../../hooks/useDebounce'
 import APIService from '../../shared/api/service/APIService'
 import RoutingPath from '../../routes/RoutingPath'
 
 export const SearchRecipe = () => {
+	const formRef: any = useRef()
 	const history = useHistory()
 	const [searchTerm, setSearchTerm] = useState<string>('')
 	const [results, setResults] = useState<[]>([])
@@ -15,6 +16,7 @@ export const SearchRecipe = () => {
 	const directToRecipeView = () => {
 		setSearchTerm('')
 		setResults([])
+		formRef.current.value = ''
 		history.push(RoutingPath.recipeView)
 	}
 
@@ -40,8 +42,8 @@ export const SearchRecipe = () => {
 
 	return (
 		<div className="searchRecipeContainer">
+			<input ref={formRef} className="searchInput" placeholder="Search Recipe" onChange={e => setSearchTerm(e.target.value)} />
 			<div className="searchRecipeContent">
-				<input className="searchInput" placeholder="Search Recipe" onChange={e => setSearchTerm(e.target.value)} />
 				{isSearching && <div>Searching ...</div>}
 				<div className="dropdown-content" onClick={() => directToRecipeView()}>
 					{results.map((x: any) => (

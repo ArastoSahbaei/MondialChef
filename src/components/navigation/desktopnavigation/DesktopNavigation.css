@@ -5,9 +5,12 @@
 }
 
 .desktopNavigationWrapper span {
+	text-transform: uppercase;
+	color: white;
 	align-self: center;
 	justify-self: center;
 	cursor: pointer;
+	font-weight: 800;
 }
 
 .navigationLogotype {
@@ -25,5 +28,13 @@
 	grid-column: 16/17;
 	grid-row: 1/1;
 	cursor: pointer;
-	display:grid;
+	display: grid;
+}
+
+.searchRecipeBar {
+	grid-column: 6/15;
+	grid-row: 1/1;
+	align-self: center;
+	justify-self: center;
+	width: 100%;
 }

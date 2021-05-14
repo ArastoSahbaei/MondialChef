@@ -24,9 +24,11 @@ export const DesktopNavigation = () => {
 				onClick={() => history.push(RoutingPath.homeView)}
 				src={Logotype}
 				alt='' />
-			<span onClick={() => history.push(RoutingPath.homeView)}>Home</span>
 			<span onClick={() => history.push(RoutingPath.recipeView)}>Recipes</span>
-			<SearchRecipe />
+			<span onClick={() => history.push(RoutingPath.recipeView)}>Top 100</span>
+			<div className='searchRecipeBar'>
+				<SearchRecipe />
+			</div>
 			{displayUsernameOrSigninButton()}
 		</div>
 	)
