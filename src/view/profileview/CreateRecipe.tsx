@@ -1,47 +1,45 @@
-import './CreateRecipe.css'
+import {Formik, Field, Form} from 'formik';
+import './CreateRecipe.css';
+import {useContext} from 'react'
+import { UserContext } from '../../shared/providers/UserProvider'
+import APIService from '../../shared/api/service/APIService';
 
 export const CreateRecipe = () => {
-    return (
-        <div className="createRecipeWrapper">
-            <h1 className="pageTitle">Create recipe</h1>
-            <div className="createRecipeComponent">
-                <form>
-                    <label>Recipe Title</label><br />
-                    <input type="text" /><br />
-                    <label>Recipe Image</label><br />
-                    <input type="file" /><br />
-                    <label>Recipe Categories</label><br />
-                    <input type="checkbox" name="vegetarian" id="vegetarian" value="vegetarian"/>
-                    <label htmlFor="vegetarian">Vegetarian</label><br />
-                    <input type="checkbox" name="pescetarian" id="pescetarian" value="pescetarian"/>
-                    <label htmlFor="pescetarian">Pescetarian</label><br />
-                    <input type="checkbox" name="meat" id="meat" value="meat"/>
-                    <label htmlFor="meat">Meat FTW</label><br />
-                    <label>Ingredients</label><br />
-                    <input type="text" placeholder="1"/><br />
-                    <input type="text" placeholder="2"/><br />
-                    <input type="text" placeholder="3"/><br />
-                    <input type="text" placeholder="4"/><br />
-                    <input type="text" placeholder="5"/><br />
-                    <input type="text" placeholder="6"/><br />
-                    <input type="text" placeholder="7"/><br />
-                    <input type="text" placeholder="8"/><br />
-                    <input type="text" placeholder="9"/><br />
-                    <input type="text" placeholder="10"/><br />
-                    <label>Instructions</label><br />
-                    <input type="text" placeholder="1"/><br />
-                    <input type="text" placeholder="2"/><br />
-                    <input type="text" placeholder="3"/><br />
-                    <input type="text" placeholder="4"/><br />
-                    <input type="text" placeholder="5"/><br />
-                    <input type="text" placeholder="6"/><br />
-                    <input type="text" placeholder="7"/><br />
-                    <input type="text" placeholder="8"/><br />
-                    <input type="text" placeholder="9"/><br />
-                    <input type="text" placeholder="10"/><br />
-                    <input type="submit"/><br />
-                </form>
-            </div>
-        </div>
-    )
-}
+	const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
+
+
+    const createRecipe = async (recipeTitle: string, recipeDuration: number, recipeIngredients: string, recipeDescription: string, recipeOriginCountry: string, recipeLanguage: string) => {
+        try{
+            await APIService.createRecipe(authenticatedUser.id, recipeTitle, recipeDuration, recipeIngredients, recipeDescription, recipeOriginCountry, recipeLanguage)
+        }catch(error){
+            console.log('err' + error)
+        }
+    }
+
+	return (
+		<div className='createRecipeWrapper'>
+			<h1 className='pageTitle'>Create recipe</h1>
+			<Formik
+				initialValues={{recipeTitle: '', recipeDuration:1, recipeIngredients:'',recipeDescription:'',  recipeOriginCountry:'',recipeLanguage:''}}
+				onSubmit={(data, {setSubmitting}) => {
+                    setSubmitting(true)
+                    console.log(data.recipeDuration)
+                    createRecipe(data.recipeTitle, data.recipeDuration, data.recipeIngredients, data.recipeDescription, data.recipeOriginCountry, data.recipeLanguage)
+                    setSubmitting(false)
+				}}>
+				{({values}) => (
+					<Form>
+                        <Field placeholder="Recipe Title" name="recipeTitle" type="input"/><br />
+                        <Field placeholder="Recipe duration" name="recipeDuration" type="number"/><br />
+                        <Field placeholder="Recipe ingredients TB ARRAY" name="recipeIngredients" type="input"/><br />
+                        <Field placeholder="Recipe description" name="recipeDescription" type="textarea"/><br />
+                        <Field placeholder="Recipe origin country" name="recipeOriginCountry" type="input"/><br />
+                        <Field placeholder="Recipe language" name="recipeLanguage" type="input"/><br />
+						<button type='submit'>Submit</button>
+						<pre>{JSON.stringify(values, null, 2)}</pre>
+					</Form>
+				)}
+			</Formik>
+		</div>
+	);
+};
