@@ -36,7 +36,6 @@ export const CreateRecipe = () => {
                         <Field placeholder="Recipe origin country" name="recipeOriginCountry" type="input"/><br />
                         <Field placeholder="Recipe language" name="recipeLanguage" type="input"/><br />
 						<button type='submit'>Submit</button>
-						<pre>{JSON.stringify(values, null, 2)}</pre>
 					</Form>
 				)}
 			</Formik>
