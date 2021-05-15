@@ -5,6 +5,7 @@ import './DesktopNavigation.css'
 import { useContext } from 'react'
 import { UserContext } from '../../../shared/providers/UserProvider'
 import Logotype from '../../../shared/images/logotype.svg'
+import { SearchRecipe } from '../../searchrecipe/SearchRecipe'
 
 export const DesktopNavigation = () => {
 	const history = useHistory()
@@ -23,9 +24,11 @@ export const DesktopNavigation = () => {
 				onClick={() => history.push(RoutingPath.homeView)}
 				src={Logotype}
 				alt='' />
-
-			<span onClick={() => history.push(RoutingPath.homeView)}>Home</span>
 			<span onClick={() => history.push(RoutingPath.recipeView)}>Recipes</span>
+			<span onClick={() => history.push(RoutingPath.recipeView)}>Top 100</span>
+			<div className='searchRecipeBar'>
+				<SearchRecipe />
+			</div>
 			{displayUsernameOrSigninButton()}
 		</div>
 	)

@@ -52,6 +52,11 @@ const resetPassword = (newPasswordAndToken: any) => {
 	})
 }
 
+const getAllRecipes = () => {
+	return http.get('/recipe')
+}
+
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
 	authenticatedRouteExample,
 	registerNewUser,
@@ -63,5 +68,6 @@ export default {
 	deleteUserWithID,
 	forgotPassword,
 	resetPassword,
-	createRecipe
+	createRecipe,
+	getAllRecipes
 }

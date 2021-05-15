@@ -23,7 +23,6 @@ export const CreateRecipe = () => {
 				initialValues={{recipeTitle: '', recipeDuration:1, recipeIngredients:'',recipeDescription:'',  recipeOriginCountry:'',recipeLanguage:''}}
 				onSubmit={(data, {setSubmitting}) => {
                     setSubmitting(true)
-                    console.log(data.recipeDuration)
                     createRecipe(data.recipeTitle, data.recipeDuration, data.recipeIngredients, data.recipeDescription, data.recipeOriginCountry, data.recipeLanguage)
                     setSubmitting(false)
 				}}>
