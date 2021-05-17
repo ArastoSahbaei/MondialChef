@@ -54,6 +54,8 @@ export const Routes = (props: { children?: React.ReactChild }) => {
 		<BrowserRouter>
 			{props.children}
 			<Switch>
+				<Route exact path={RoutingPath.recipeView} component={RecipeView} />
+				<Route exact path={RoutingPath.signInView} component={SignInView} />
 				<Route exact path={AuthenticatedPath.createRecipeView} component={CreateRecipeView} />
 				<Route exact path={AuthenticatedPath.favouriteRecipeView} component={FavouriteRecipeView} />
 				<Route exact path={AuthenticatedPath.profileView} component={ProfileView} />
