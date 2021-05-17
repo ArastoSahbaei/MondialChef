@@ -4,7 +4,6 @@ import RoutingPath from '../routes/RoutingPath'
 import { HomeView } from '../view/navigationview/HomeView'
 import { RecipeView } from '../view/navigationview/RecipeView'
 import { SignInView } from '../view/signinview/SignInView'
-import { CreateRecipe } from '../view/profileview/CreateRecipe'
 import APIService from '../shared/api/service/APIService'
 import { UserContext } from '../shared/providers/UserProvider'
 import AuthenticatedPath from './AuthenticatedPath'
@@ -61,7 +60,6 @@ export const Routes = (props: { children?: React.ReactChild }) => {
 				<Route exact path={AuthenticatedPath.userRecipeView} component={UserRecipeView} />
 				<Route exact path={RoutingPath.recipeView} component={RecipeView} />
 				<Route exact path={RoutingPath.signInView} component={SignInView} />
-				<Route exact path={RoutingPath.createRecipeView} component={CreateRecipe} />
 				<Route exact path={RoutingPath.recipeDetailsView()} component={RecipeDetailView} />
 				<Route component={HomeView} />
 			</Switch>
