@@ -39,16 +39,16 @@ const forgotPassword = (email: any) => {
 const resetPassword = (newPasswordAndToken: any) => {
 	return http.put('/resetpassword', newPasswordAndToken)
 }
- //RECIPE
- const createRecipe = (userId: string, recipeTitle: string, recipeDuration: number, recipeIngredients: string, recipeDescription: string, recipeOriginCountry: string, recipeLanguage: string) => {
-	return http.post('/recipe',{
-		"userId": userId,
-		"title": recipeTitle,
-		"duration": recipeDuration,
-		"ingrediens":recipeIngredients,
-		"description":recipeDescription,
-		"originCountry":recipeOriginCountry,
-		"recipeLanguage": recipeLanguage
+//RECIPE
+const createRecipe = (userId: string, recipeTitle: string, recipeDuration: number, recipeIngredients: string, recipeDescription: string, recipeOriginCountry: string, recipeLanguage: string) => {
+	return http.post('/recipe', {
+		'userId': userId,
+		'title': recipeTitle,
+		'duration': recipeDuration,
+		'ingrediens': recipeIngredients,
+		'description': recipeDescription,
+		'originCountry': recipeOriginCountry,
+		'recipeLanguage': recipeLanguage
 	})
 }
 
@@ -56,7 +56,10 @@ const getAllRecipes = () => {
 	return http.get('/recipe')
 }
 
-// eslint-disable-next-line import/no-anonymous-default-export
+const searchRecipe = (search: string) => {
+	return http.get(`/search/recipe?title=${search}`)
+}
+
 export default {
 	authenticatedRouteExample,
 	registerNewUser,
@@ -69,5 +72,6 @@ export default {
 	forgotPassword,
 	resetPassword,
 	createRecipe,
-	getAllRecipes
+	getAllRecipes,
+	searchRecipe
 }

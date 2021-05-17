@@ -24,7 +24,7 @@ export const SearchRecipe = () => {
 		setIsSearching(true)
 		if (debouncedSearchTerm) {
 			try {
-				const { data } = await APIService.getAllRecipes()
+				const { data } = await APIService.searchRecipe(searchTerm)
 				setIsSearching(false)
 				setResults(data)
 			} catch (error) {
@@ -48,7 +48,7 @@ export const SearchRecipe = () => {
 				<div className="dropdown-content">
 					{results.map((x: any) => (
 						<div className="dropdown-value" key={Math.random()} onClick={() => directToRecipeView(x._id)}>
-							<img src={'https://picsum.photos/400/200'} alt={"Error"} />
+							<img src={'https://picsum.photos/400/200'} alt={'Error'} />
 							<p>{x.title}</p>
 							<p>{x.createdByUser.username}</p>
 							<hr />
