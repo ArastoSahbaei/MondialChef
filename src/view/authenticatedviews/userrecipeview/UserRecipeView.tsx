@@ -24,11 +24,11 @@ export const UserRecipeView = () => {
 		const recipes = userRecipes.map((x: any) => (
 			<div key={x} onClick={() => history.push(RoutingPath.recipeDetailsView(x._id))}><br />
 				<img src={'https://picsum.photos/200/100'} alt={'Error'} /><br />
-				<span>{x.title}</span><br />
+				<h3>{x.title}</h3><br />
 				<span>{x.description}</span><br />
 				<span>{x.ingrediens}</span><br />
-				<span>{x.duration}</span><br />
-				<span>{x.originCountry}</span><br />
+				<span>{x.duration}mins</span>
+				<span style={{padding:"0 15px"}}>Origin country: {x.originCountry}</span><br />
 			</div>
 		))
 
