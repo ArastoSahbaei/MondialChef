@@ -22,7 +22,7 @@ export const UserRecipeView = () => {
 
 	const displayUserRecipes = () => {
 		const recipes = userRecipes.map((x: any) => (
-			<div key={x} onClick={() => history.push(RoutingPath.recipeDetailsView(x._id))}><br />
+			<div key={x._id} onClick={() => history.push(RoutingPath.recipeDetailsView(x._id))}><br />
 				<img src={'https://picsum.photos/200/100'} alt={'Error'} /><br />
 				<h3>{x.title}</h3><br />
 				<span>{x.description}</span><br />
