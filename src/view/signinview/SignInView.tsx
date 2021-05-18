@@ -19,6 +19,8 @@ export const SignInView = () => {
 			const { data } = await APIService.login(loginCredentials)
 			localStorage.setItem('token', data.token)
 			console.log(data)
+			console.log(data)
+			console.log(data)
 
 			setAuthenticatedUser({
 				authenticated: data.authenticated,

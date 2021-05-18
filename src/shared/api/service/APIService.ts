@@ -1,3 +1,4 @@
+import { newRecipe } from '../../interface/Interface'
 import http from '../API'
 //USER
 const authenticatedRouteExample = () => {
@@ -40,16 +41,8 @@ const resetPassword = (newPasswordAndToken: any) => {
 	return http.put('/resetpassword', newPasswordAndToken)
 }
 //RECIPE
-const createRecipe = (userId: string, recipeTitle: string, recipeDuration: number, recipeIngredients: string, recipeDescription: string, recipeOriginCountry: string, recipeLanguage: string) => {
-	return http.post('/recipe', {
-		'userId': userId,
-		'title': recipeTitle,
-		'duration': recipeDuration,
-		'ingrediens': recipeIngredients,
-		'description': recipeDescription,
-		'originCountry': recipeOriginCountry,
-		'recipeLanguage': recipeLanguage
-	})
+const createRecipe = (data: newRecipe) => {
+	return http.post('/recipe', data)
 }
 
 const getAllRecipes = () => {

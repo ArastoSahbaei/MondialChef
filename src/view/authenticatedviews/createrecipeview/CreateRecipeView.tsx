@@ -8,9 +8,9 @@ export const CreateRecipeView = () => {
 	const [authenticatedUser,] = useContext(UserContext)
 
 
-	const createRecipe = async (recipeTitle: string, recipeDuration: number, recipeIngredients: string, recipeDescription: string, recipeOriginCountry: string, recipeLanguage: string) => {
+	const createRecipe = async (data: any) => {
 		try {
-			await APIService.createRecipe(authenticatedUser.id, recipeTitle, recipeDuration, recipeIngredients, recipeDescription, recipeOriginCountry, recipeLanguage)
+			await APIService.createRecipe(data)
 		} catch (error) {
 			console.log('err' + error)
 		}
@@ -20,24 +20,33 @@ export const CreateRecipeView = () => {
 		<div className='createRecipeWrapper'>
 			<h1 className='pageTitle'>Create recipe</h1>
 			<Formik
-				initialValues={{ recipeTitle: '', recipeDuration: 1, recipeIngredients: '', recipeDescription: '', recipeOriginCountry: '', recipeLanguage: '' }}
+				initialValues={{
+					userId: authenticatedUser.id,
+					title: '',
+					duration: 1,
+					ingredients: '',
+					description: '',
+					originCountry: '',
+					recipeLanguage: ''
+				}}
 				onSubmit={(data, { setSubmitting }) => {
 					setSubmitting(true)
-					createRecipe(data.recipeTitle, data.recipeDuration, data.recipeIngredients, data.recipeDescription, data.recipeOriginCountry, data.recipeLanguage)
+					createRecipe(data)
 					setSubmitting(false)
 				}}>
 				{() => (
 					<Form>
-						<Field placeholder="Recipe Title" name="recipeTitle" type="input" /><br />
-						<Field placeholder="Recipe duration" name="recipeDuration" type="number" /><br />
-						<Field placeholder="Recipe ingredients TB ARRAY" name="recipeIngredients" type="input" /><br />
-						<Field placeholder="Recipe description" name="recipeDescription" type="textarea" /><br />
-						<Field placeholder="Recipe origin country" name="recipeOriginCountry" type="input" /><br />
+						<Field placeholder="Recipe Title" name="title" type="input" /><br />
+						<Field placeholder="Recipe duration" name="duration" type="number" /><br />
+						<Field placeholder="Recipe ingredients TB ARRAY" name="ingredients" type="input" /><br />
+						<Field placeholder="Recipe description" name="description" type="textarea" /><br />
+						<Field placeholder="Recipe origin country" name="originCountry" type="input" /><br />
 						<Field placeholder="Recipe language" name="recipeLanguage" type="input" /><br />
 						<button type='submit'>Submit</button>
 					</Form>
 				)}
 			</Formik>
+			<button onClick={() => console.log(authenticatedUser.id)}>xx</button>
 		</div>
 	)
 }
