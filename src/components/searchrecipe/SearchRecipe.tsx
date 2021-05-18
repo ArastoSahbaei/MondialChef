@@ -28,6 +28,8 @@ export const SearchRecipe = () => {
 				setIsSearching(false)
 				setResults(data)
 			} catch (error) {
+				setIsSearching(false)
+				setResults([])
 				console.log(error)
 			}
 		} else {

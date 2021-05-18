@@ -1,9 +1,9 @@
 import APIService from '../../../shared/api/service/APIService'
-import {useState, useEffect} from 'react'
-import {useContext} from 'react'
-import {UserContext} from '../../../shared/providers/UserProvider'
+import { useState, useEffect } from 'react'
+import { useContext } from 'react'
+import { UserContext } from '../../../shared/providers/UserProvider'
 import RoutingPath from '../../../routes/RoutingPath'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 export const UserRecipeView = () => {
 	const [userRecipes, setUserRecipes] = useState<[]>([])
@@ -33,7 +33,7 @@ export const UserRecipeView = () => {
 				<span>{x.ingrediens}</span>
 				<br />
 				<span>{x.duration}mins</span>
-				<span style={{padding: '0 15px'}}>Origin country: {x.originCountry}</span>
+				<span style={{ padding: '0 15px' }}>Origin country: {x.originCountry}</span>
 				<br />
 			</div>
 		))
