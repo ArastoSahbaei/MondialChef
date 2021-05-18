@@ -30,11 +30,13 @@ export const Routes = (props: { children?: React.ReactChild }) => {
 
 		if (validateToken(JWT.exp)) {
 			// TODO: There has to be a better way to recieve the username? You cannot just do a getUserWithID like this?
-			const response = await APIService.getUserWithID(JWT.id)
+			const { data } = await APIService.getUserWithID(JWT.id)
+			console.log(data)
 			setAuthenticatedUser({
 				id: JWT.id,
 				authenticated: true,
-				username: response.data.username,
+				username: data.username,
+				createdRecipes: data.createdRecipes
 			})
 		} else {
 			setAuthenticatedUser({

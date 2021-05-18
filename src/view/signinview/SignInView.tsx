@@ -22,12 +22,7 @@ export const SignInView = () => {
 			console.log(data)
 			console.log(data)
 
-			setAuthenticatedUser({
-				authenticated: data.authenticated,
-				id: data.id,
-				token: data.token,
-				username: data.username
-			})
+			setAuthenticatedUser(data)
 
 			history.push(RoutingPath.homeView)
 		} catch (error) {

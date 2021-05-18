@@ -6,7 +6,7 @@ import AuthenticatedPath from '../../../routes/AuthenticatedPath'
 import RoutingPath from '../../../routes/RoutingPath'
 
 export const ProfileDropDown = () => {
-	const [, setAuthenticatedUser] = useContext(UserContext)
+	const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
 	const history = useHistory()
 
 	const logout = () => {
@@ -22,7 +22,7 @@ export const ProfileDropDown = () => {
 			<hr />
 			<div className='dropDownProfileRowWrapper'>
 				<span onClick={() => history.push(AuthenticatedPath.profileView)}>Profile</span> <br />
-				<span onClick={() => history.push(AuthenticatedPath.userRecipeView)}>my Recipes (2)</span> <br />
+				<span onClick={() => history.push(AuthenticatedPath.userRecipeView)}>my Recipes ({authenticatedUser?.createdRecipes?.length + 1})</span> <br />
 				<span onClick={() => history.push(AuthenticatedPath.createRecipeView)}>Create new Recipe</span>
 				<hr />
 				<span onClick={() => logout()}>Sign out</span>
