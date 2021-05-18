@@ -13,11 +13,11 @@ export const SearchRecipe = () => {
 	const [isSearching, setIsSearching] = useState(false)
 	const debouncedSearchTerm = useDebounce(searchTerm, 500)
 
-	const directToRecipeView = (recipeId: string) => {
+	const directToRecipeView = (recipe: any) => {
 		setSearchTerm('')
 		setResults([])
 		formRef.current.value = ''
-		history.push(RoutingPath.recipeDetailsView(recipeId))
+		history.push(RoutingPath.recipeDetailsView(recipe._id), recipe)
 	}
 
 	const startSearch = async () => {
@@ -49,7 +49,7 @@ export const SearchRecipe = () => {
 				{isSearching && <div>Searching ...</div>}
 				<div className="dropdown-content">
 					{results.map((x: any) => (
-						<div className="dropdown-value" key={Math.random()} onClick={() => directToRecipeView(x._id)}>
+						<div className="dropdown-value" key={Math.random()} onClick={() => directToRecipeView(x)}>
 							<img src={'https://picsum.photos/400/200'} alt={'Error'} />
 							<p>{x.title}</p>
 							<p>{x.createdByUser.username}</p>
