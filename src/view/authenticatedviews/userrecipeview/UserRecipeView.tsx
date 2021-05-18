@@ -22,7 +22,7 @@ export const UserRecipeView = () => {
 	const displayUserRecipes = () => {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const recipes = userRecipes.map((x: any) => (
-			<div key={x._id} onClick={() => history.push(RoutingPath.recipeDetailsView(x._id))}>
+			<div key={x._id} onClick={() => history.push(RoutingPath.recipeDetailsView(x._id), x)}>
 				<br />
 				<img src={'https://picsum.photos/200/100'} alt={'Error'} />
 				<br />
