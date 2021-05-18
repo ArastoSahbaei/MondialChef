@@ -22,7 +22,7 @@ export const ProfileDropDown = () => {
 			<hr />
 			<div className='dropDownProfileRowWrapper'>
 				<span onClick={() => history.push(AuthenticatedPath.profileView)}>Profile</span> <br />
-				<span onClick={() => history.push(AuthenticatedPath.userRecipeView)}>my Recipes</span> <br />
+				<span onClick={() => history.push(AuthenticatedPath.userRecipeView)}>my Recipes (2)</span> <br />
 				<span onClick={() => history.push(AuthenticatedPath.createRecipeView)}>Create new Recipe</span>
 				<hr />
 				<span onClick={() => logout()}>Sign out</span>

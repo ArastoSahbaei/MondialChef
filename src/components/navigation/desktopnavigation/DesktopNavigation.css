@@ -25,14 +25,28 @@
 
 .signInButton,
 .navigationProfile {
-	grid-column: 16/17;
+	grid-column: 18/19;
 	grid-row: 1/1;
 	cursor: pointer;
 	display: grid;
 }
 
+.navHeartWrapper {
+	grid-column: 16/18;
+	grid-row: 1/1;
+	align-self: center;
+	justify-self: center;
+	cursor: pointer;
+}
+
+.navHeart {
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+}
+
 .searchRecipeBar {
-	grid-column: 6/15;
+	grid-column: 6/13;
 	grid-row: 1/1;
 	align-self: center;
 	justify-self: center;

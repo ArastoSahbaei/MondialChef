@@ -56,13 +56,14 @@ export const Routes = (props: { children?: React.ReactChild }) => {
 			<Switch>
 				<Route exact path={RoutingPath.recipeView} component={RecipeView} />
 				<Route exact path={RoutingPath.signInView} component={SignInView} />
+				<Route exact path={RoutingPath.recipeView} component={RecipeView} />
+				<Route exact path={RoutingPath.signInView} component={SignInView} />
+				<Route exact path={RoutingPath.recipeDetailsView()} component={RecipeDetailView} />
+				<Route exact path={RoutingPath.favouriteRecipesView} component={FavouriteRecipeView} />
 				<Route exact path={AuthenticatedPath.createRecipeView} component={CreateRecipeView} />
 				<Route exact path={AuthenticatedPath.favouriteRecipeView} component={FavouriteRecipeView} />
 				<Route exact path={AuthenticatedPath.profileView} component={ProfileView} />
 				<Route exact path={AuthenticatedPath.userRecipeView} component={UserRecipeView} />
-				<Route exact path={RoutingPath.recipeView} component={RecipeView} />
-				<Route exact path={RoutingPath.signInView} component={SignInView} />
-				<Route exact path={RoutingPath.recipeDetailsView()} component={RecipeDetailView} />
 				<Route component={HomeView} />
 			</Switch>
 		</BrowserRouter>

@@ -73,7 +73,7 @@ export const SignInView = () => {
 				<input placeholder="email" onChange={(event) => setRegisterUser({ ...registerUser, email: event.target.value })} /> <br />
 				<input placeholder="password" onChange={(event) => setRegisterUser({ ...registerUser, password: event.target.value })} /> <br />
 			Recieve newsletter?
-			<input checked={registerUser.recieveNewsLetters}
+				<input checked={registerUser.recieveNewsLetters}
 					type="checkbox"
 					onChange={() => setRegisterUser({ ...registerUser, recieveNewsLetters: !registerUser.recieveNewsLetters })} /> <br />
 				<button onClick={(event) => register(event)}>Register</button>
