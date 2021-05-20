@@ -6,7 +6,7 @@ import { useContext } from 'react'
 import { UserContext } from '../../../shared/providers/UserProvider'
 import Logotype from '../../../shared/images/logotype.svg'
 import { SearchRecipe } from '../../searchrecipe/SearchRecipe'
-import heartImg from '../../../shared/images/heart.svg'
+import recipeImg from '../../../shared/images/recipes.png'
 
 export const DesktopNavigation = () => {
 	const history = useHistory()
@@ -21,7 +21,7 @@ export const DesktopNavigation = () => {
 	const displayFavouriteProductsHeart = () => {
 		return (
 			<div className='navHeartWrapper' onClick={() => history.push(RoutingPath.favouriteRecipesView)}>
-				<img className='navHeart' src={heartImg} alt={''} />
+				<img className='navHeart' src={recipeImg} alt={''} />
 				{/* {displayAmountOfFavouriteProducts()} */}
 			</div>
 		)
