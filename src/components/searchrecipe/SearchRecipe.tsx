@@ -51,19 +51,16 @@ export const SearchRecipe = () => {
 				ref={formRef}
 				placeholder={`Search between ${totalRecipes} recipes written by ${totalChefs} chefs worldwide`}
 				onChange={event => setSearchTerm(event.target.value)} />
-
-			<div className="searchRecipeContent">
-				{isSearching && <div>Searching ...</div>}
-				<div className="dropdown-content">
-					{results.map((x: any) => (
-						<div className="dropdown-value" key={Math.random()} onClick={() => directToRecipeView(x)}>
-							<img src={'https://picsum.photos/400/200'} alt={'Error'} />
-							<p>{x.title}</p>
-							<p>{x.createdByUser.username}</p>
-							<hr />
-						</div>
-					))}
-				</div>
+			{isSearching && <div>Searching ...</div>}
+			<div className="dropdown-content">
+				{results.map((x: any) => (
+					<div className="dropdown-value" key={Math.random()} onClick={() => directToRecipeView(x)}>
+						<img src={'https://picsum.photos/400/200'} alt={'Error'} />
+						<p>{x.title}</p>
+						<p>{x.createdByUser.username}</p>
+						<hr />
+					</div>
+				))}
 			</div>
 		</div>
 	)
