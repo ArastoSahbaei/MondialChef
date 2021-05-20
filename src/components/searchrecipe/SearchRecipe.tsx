@@ -42,9 +42,16 @@ export const SearchRecipe = () => {
 		startSearch()
 	}, [debouncedSearchTerm])
 
+	const totalRecipes = '385784'
+	const totalChefs = '4849'
+
 	return (
 		<div className="searchRecipeContainer">
-			<input ref={formRef} className="searchInput" placeholder="Search Recipe" onChange={e => setSearchTerm(e.target.value)} />
+			<input className="searchInput"
+				ref={formRef}
+				placeholder={`Search between ${totalRecipes} recipes written by ${totalChefs} chefs worldwide`}
+				onChange={event => setSearchTerm(event.target.value)} />
+
 			<div className="searchRecipeContent">
 				{isSearching && <div>Searching ...</div>}
 				<div className="dropdown-content">
@@ -58,6 +65,6 @@ export const SearchRecipe = () => {
 					))}
 				</div>
 			</div>
-		</div >
+		</div>
 	)
 }
