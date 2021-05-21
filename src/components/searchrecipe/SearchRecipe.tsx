@@ -56,8 +56,10 @@ export const SearchRecipe = () => {
 				{results.map((x: any) => (
 					<div className="dropdown-value" key={Math.random()} onClick={() => directToRecipeView(x)}>
 						<img src={'https://picsum.photos/400/200'} alt={'Error'} />
-						<p>{x.title}</p>
-						<p>{x.createdByUser.username}</p>
+						<p>title: {x.title}</p>
+						<p>created by: {x.createdByUser}</p>
+						<p>96% like this recipe</p>
+						<button>ADD TO FAVOURITE</button>
 						<hr />
 					</div>
 				))}
