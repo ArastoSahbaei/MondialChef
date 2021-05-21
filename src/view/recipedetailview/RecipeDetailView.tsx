@@ -13,6 +13,7 @@ export const RecipeDetailView = () => {
 			<h1>{location.state.description}</h1>
 			<h1>{location.state.duration}</h1>
 			<h1>{location.state.originCountry}</h1>
+			<h1>ADD TO FAVOURITE</h1>
 		</div>
 	)
 }
