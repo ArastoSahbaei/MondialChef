@@ -53,6 +53,10 @@ const searchRecipe = (search: string) => {
 	return http.get(`/search/recipe?title=${search}`)
 }
 
+const updateFavouriteRecipes = (data: any) => {
+	return http.put('/favouriterecipes', data)
+}
+
 export default {
 	authenticatedRouteExample,
 	registerNewUser,
@@ -66,5 +70,6 @@ export default {
 	resetPassword,
 	createRecipe,
 	getAllRecipes,
-	searchRecipe
+	searchRecipe,
+	updateFavouriteRecipes
 }

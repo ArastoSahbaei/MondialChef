@@ -1,7 +1,20 @@
+import { useContext } from 'react'
 import { useLocation } from 'react-router-dom'
+import APIService from '../../shared/api/service/APIService'
+import { UserContext } from '../../shared/providers/UserProvider'
 
 export const RecipeDetailView = () => {
+	const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
 	const location: any = useLocation()
+
+	const addToFavourite = async () => {
+		//TODO: location.state.id will be undefined if the URL is not navigated to.
+		try {
+			await APIService.updateFavouriteRecipes({ userId: authenticatedUser.id, favouriteRecipes: location.state.id })
+		} catch (error) {
+			console.log(error)
+		}
+	}
 
 	return (
 		<div>
@@ -13,7 +26,7 @@ export const RecipeDetailView = () => {
 			<h1>{location.state.description}</h1>
 			<h1>{location.state.duration}</h1>
 			<h1>{location.state.originCountry}</h1>
-			<h1>ADD TO FAVOURITE</h1>
+			<button onClick={() => addToFavourite()}>ADD TO FAVOURITE</button>
 		</div>
 	)
 }
